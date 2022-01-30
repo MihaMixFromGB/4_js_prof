@@ -68,10 +68,13 @@ app.post('/api/v1/cart', (req, res) => {
 app.delete('/api/v1/cart/:id', (req, res) => {
   fs.readFile(cart_path, 'utf-8', (err, data) => {
     if(!err) {
-      const cart = JSON.parse(data)
-                  .filter(product => {
-                    product.id !== req.params.id
-                  });
+      const cart = JSON.parse(data);
+      const index = cart.findIndex(item => item.id == req.params.id)
+      if (index < 0) {
+        res.status(404).send('Product not found')
+        return
+      }
+      cart.splice(index, 1)
       fs.writeFile(cart_path, JSON.stringify(cart), 'utf-8', (err, data) => {
         res.sendStatus(201)
       })
