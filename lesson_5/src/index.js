@@ -16,4 +16,5 @@ catalogPresenter.init()
 
 /* Имитация добавления товара в корзину
 (подписка на событие там, где инициализация экземпляра cartModel (CatalogPresenter.js)) */
-cartModel.addTestProduct()
+/* Задержка введена для ожидания завершения инициализации корзины, чтобы не возвращался неполный список */
+setTimeout(() => { cartModel.addTestProduct() }, 1000 );
