@@ -1,0 +1,86 @@
+@import '~@/assets/style/_mixins';
+// ----------------------
+// ТЕКСТ
+* {
+    margin: 0;
+    padding: 0;
+}
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.text-italic {
+    font-style: italic;
+}
+.text-bold {
+    font-weight: bold;
+}
+.price {
+    color: #EF5B70;
+}
+.text-color {
+    color: #F16D7F;
+}
+// ТЕКСТ
+// ----------------------
+
+// ----------------------
+// КНОПКИ
+.btn {
+    cursor: pointer;
+    padding: 15px 40px;
+    background-color: white;
+    @include text;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    border: none;
+}
+.btn-pink {
+    color: #F26376;
+    border: 1px solid #FF6A6A;
+    &:hover {
+        color: #FFFFFF;
+        background: #F26376;
+    }
+}
+.btn-grey {
+    color: #000000;
+    border: 1px solid #A4A4A4;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+.btn-pink-fill {
+    border: 1px solid #FFFFFF;
+    background-color: #F16D7F;
+    color: #FFFFFF;
+    &:hover {
+        border: 1px solid #F16D7F;
+        background-color: #FFFFFF;
+        color: #F16D7F;
+    }
+}
+// КНОПКИ
+// ----------------------
+
+@media (max-width: 1024px) {
+   .container {
+       padding: 0;
+       max-width: 736px;
+   }
+}
+
+@media (max-width: 667px) {
+    .container {
+        max-width: 360px;
+    }
+ }

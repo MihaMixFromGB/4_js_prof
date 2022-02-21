@@ -1,0 +1,51 @@
+@import '~@/assets/style/_mixins';
+
+.title-path {
+    background: #F8F3F4;
+    padding: 60px 0;
+    @include text;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    & h1 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #F16D7F;
+    }
+    & p {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #636363;
+        & > a {
+            text-decoration: none;
+            color: #636363;
+            &:last-child, &:hover {
+                font-weight: bold;
+                color: #F16D7F;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .title-path {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: 667px) {
+    .title-path {
+        &__box {
+            flex-direction: column;
+        }
+        & > p {
+            display: block;
+            margin-top: 32px;
+        }
+    }
+}
